@@ -1,0 +1,13 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %} Edit Rating {% endblock %}
+{% block content %}
+<div class="container-fluid">
+<form action="{{url_for('edit')}}" method="post">
+<h2>Book Name: {{book_selected.name}}</h2>
+<p>Current Rating: {{book_selected.rating}}</p>
+  <input hidden name="id" value="{{book_selected.id}}">
+  <input placeholder="new rating" name="new_rating"><button type="submit">Change Rating</button>
+</form>
+  </div>
+{% endblock %}
